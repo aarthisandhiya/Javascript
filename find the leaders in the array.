@@ -1,0 +1,42 @@
+leaders(arr, n){
+        let returnarray=[];
+        for(let i=0;i<n;i++){
+            let count=0;
+            if(i==n-1){
+              returnarray.push(arr[i]);
+            }
+            else{
+              
+              for(let j=i+1;j<n;j++){
+                  
+                if(arr[i]>=arr[j]){
+                    count=count+1;
+                   
+                }
+            }
+            
+            if(count==n-1-i){
+                returnarray.push(arr[i]);
+                count=1;
+            }
+            
+            }
+        }
+        
+        return returnarray;
+    }
+    
+    //Optimized with O(n)
+    leaders(arr, n) {
+    const returnArray = [];
+    let maxRight = arr[n - 1];
+    returnArray.push(maxRight);
+
+    for (let i = n - 2; i >= 0; i--) {
+        if (arr[i] >= maxRight) {
+            maxRight = arr[i];
+            returnArray.push(maxRight);
+        }
+    }
+
+    return returnArray.reverse();
