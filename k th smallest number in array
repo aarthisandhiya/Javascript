@@ -1,0 +1,13 @@
+kthSmallest(arr,l,r,k){
+    for(let i=0;i<r+1;i++){
+        let j=0;
+        while(j<r+1){
+            if(arr[j+1]<arr[j]){
+                [arr[j+1],arr[j]]=[arr[j],arr[j+1]];
+            }
+            j++;
+        }
+      
+    }
+  return arr[k-1]; 
+  }
