@@ -1,0 +1,29 @@
+ minDist(a, n, x, y)
+    {   let xindex=-1,yindex=-1;let min=0;let c=0;
+         for(let i=0;i<n;i++){
+            if(a[i]===x){
+                xindex=i
+            }
+            else if(a[i]===y){
+                yindex=i            
+            }
+            if(xindex!==-1 && yindex !==-1){
+                if(c==0){
+                    min=Math.abs(yindex-xindex);
+                    c++;
+                }
+                else{
+                    
+                    if(Math.abs(yindex-xindex)<min){
+                        min=Math.abs(xindex-yindex)
+                    }
+                }
+            }
+         }
+         if(xindex===-1 || yindex===-1){
+             return -1;
+         }
+         else{
+             return min;
+         }
+        }
