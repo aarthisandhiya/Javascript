@@ -1,0 +1,22 @@
+ missingNumber(arr, n)
+    {
+        let myMap=new Map();
+        let x=n;
+        for (let i = 0; i < n; i++) {
+        myMap.set(i, 0);
+        }
+        for(let x=0;x<=n;x++){
+            if(myMap.has(arr[x])){
+                  myMap.set(arr[x],myMap.get(arr[x])+1)              
+            }
+        }
+        for (const entry of myMap){
+            let [key,value]=entry;
+            if(value==0 && key>=1){
+                x=key
+                break;
+            }
+        }
+        return x;
+    
+    }
